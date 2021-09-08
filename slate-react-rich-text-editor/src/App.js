@@ -1,11 +1,16 @@
 import React, {Component} from 'react';
 import { TextEditor } from './components';
 import './App.css';
+
+export{ TextEditor};
+
 class App extends Component{
   render(){
+
+    
     return (
 
-      <div className="App">
+      <div className="Root">
       </div>
     );
   }

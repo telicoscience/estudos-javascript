@@ -1,23 +1,21 @@
-import React, {Component} from 'react'
-import {Editor} from 'slate-react'
-import {Value} from 'slate'
+import React, { useState, useMemo } from 'react'
+import { createEditor } from 'slate'
+import { Slate, Editable, withReact } from 'slate-react'
 
-
-export default class TextEditor extends Component{
-state = {
-    value: '',
-
+const PlainTextExample = () => {
+  const [value, setValue] = useState([
+    {
+      type: 'paragraph',
+      children: [{ text: 'A line of text in a paragraph.' }],
+    },
+  ])
+  const editor = useMemo(() => withReact(createEditor()), [])
+  return (
+    <Slate editor={editor} value={value} onChange={value => setValue(value)}>
+      <Editable placeholder="Enter some plain text..." />
+    </Slate>
+  )
 }
 
-//On change, update the app's React state with the new editor value. 
-onChange = ({value})=> {
-    this.setState({value})
-}
 
-    render(){
-        return(
-            <Editor value={this.state.value} onChange={this.onChange}/>
-        )
-    }
-
-}
+export default PlainTextExample
