@@ -40,6 +40,7 @@ class MyEditor extends React.Component {
   {
     this.onChange(RichUtils.toggleCode.bind(this.state.editorState))
   }
+ 
   render() {
     return (
       <div>
@@ -47,10 +48,11 @@ class MyEditor extends React.Component {
 
         <button onClick={this._onBoldClick.bind(this)}>B</button>
         <button onClick={this._onItalicClick.bind(this)}>I</button>
-
+        
       <Editor editorState={this.state.editorState} 
       handleKeyCommand={this.handleKeyCommand}
       onChange={this.onChange} />
+     
       </div>
     );
   }
