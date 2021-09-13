@@ -8,12 +8,29 @@
     <title>Trabalhando com eventos DOM </title>
 </head>
 <body>
-    <div id="area" onclick="clicar()">
+    <div id="area">
         <h3>Interaja...</h3>
     </div>
     <script type="text/javascript">
-    function clicar(){
-        window.alert("Deu certo. ")
+           var a = window.document.getElementById('area')
+           a.addEventListener('click', clicar)
+           a.addEventListener('mouseover', entrar)
+           a.addEventListener('mouseout', saiu)
+           function clicar(){
+       a.style.background='red'
     }
+        function saiu()
+        {
+            a.innerText = 'Saiu'
+            a.style.background = '#14FFEC'
+            a.style.width= '200px'
+        a.style.height = '200px'
+        }
+    function entrar(){
+        a.innerText = 'Entrou'
+        a.style.width= '250px'
+        a.style.height = '250px'
+    }
+   
     </script>
 </html>
