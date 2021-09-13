@@ -42,6 +42,15 @@ width: 0;
 height: 0;
 }
 
+#area{
+
+  background-color: #14FFEC;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  line-height: 200px;
+
+}
 /* The slider */
 .slider {
 position: absolute;
