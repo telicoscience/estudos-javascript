@@ -8,5 +8,6 @@ function fatorial(n){
     }
 
 }
-
-console.log(fatorial(4))
+for (let q = 1; q< 12; q++){
+console.log(fatorial(q))
+}
