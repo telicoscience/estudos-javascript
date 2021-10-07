@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<title>Our Funky HTML Page</title>
+<meta name="description" content="Our first page">
+<meta name="keywords" content="html tutorial template">
+</head>
+<body>
+<header>
+<h1>Contador regressivo em javascript</h1>
+</header>
+<section>
+<div id = "resultado">
+<script type="text/javascript">
+
+var count = 10;
+var tempo = document.getElementById("resultado"); // associar a variável tempo ao elemento
+
+function start() {
+     if (count > 0){
+        count -= 1;
+        
+        tempo.innerHTML =`<h2>${count}</h2>`;
+        setTimeout(start, 1000); 
+        // em vez de chamar setTimeout("start();", 100) usa só o nome da função
+        // o setTimeout vai executar a função mesmo sem pores os ()
+    }
+}
+
+start(); // chamar a função start() a primeira vez
+</script>
+</div>
+</section>
+</body>
+</html>
