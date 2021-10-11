@@ -2,10 +2,10 @@
 //declaração das variáveis
 const txt = 'morte ao miojo'//Morte ao miojo é uma referência ao canal fábrica de noobs. Altere isso daqui, encripte o que quier e seja feliz... :D
 var aux = []
-	const p = 17
-	const q = 23
+	const p = 10007
+	const q = 3137
 	var n = p*q
-	var i, j, e = []
+	var i, j, e
 	var c = []
 	var M = []
 	var d
@@ -21,7 +21,7 @@ for (let i = 0; i < txt.length; i++){
 
 
 console.clear()
-console.log(M.join(' '))
+//console.log(M.join(' '))
 
 
 //geração de chaves pública e privada
@@ -49,7 +49,7 @@ for (let i = 0; i < txt.length; i++){
 }
 
 
-console.log(c.join(' '))
+console.log(`Texto cifrado: ${c.join(' ')}`)
 
 
 //função de desencriptação
@@ -118,7 +118,7 @@ function PowerMod(x,p,N)
 	}
 
 	for (i = 0; i < c.length; i++){
-		m[i] =String.fromCharCode(PowerMod(c[i], 235, 391))
+		m[i] =String.fromCharCode(PowerMod(c[i], d, p*q))
 
 
 
@@ -127,7 +127,7 @@ function PowerMod(x,p,N)
 
 
 console.log(`As chaves públicas são ${n} e ${e}`)
-console.log(`As chaves privadas são ${p}, ${q} e ${d}. Guarde essas chaves com cuidado e não as perca`)
+console.log(`As chaves privadas são ${p}, ${q} e ${d}. Guarde essas chaves com cuidado e não as perca nem mostre a ninguém`)
 //}
 console.log(`texto decriptado: ${m.join('')}`)
 
