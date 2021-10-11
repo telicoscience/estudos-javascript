@@ -90,19 +90,45 @@ while(r1 != 0){
 }//fim do while
 //return [r, u, v]
 
-if(v<0){
+if(v < 0){
 	v = v + a
 }
 	return v
 }//fim da função euclides
 d = euclides(totient, e)
 
-for (i = 0; i < c.length; i++){
-	m[i] = double((c[i]**d)%n)
-}
+
+function PowerMod(x,p,N)
+	// Compute x^p mod N
+	{
+		var A = 1
+		var m = p
+		var t = x
+
+		while( m > 0 )
+		{
+			k = Math.floor( m/2 )
+			r = m - 2*k
+			if( r == 1 )
+				A = (A*t) % N
+			t = (t*t) % N
+			m = k
+		}
+		return A
+	}
+
+	for (i = 0; i < c.length; i++){
+		m[i] =String.fromCharCode(PowerMod(c[i], 235, 391))
+
+
+
+
+	}
+
 
 console.log(`As chaves públicas são ${n} e ${e}`)
 console.log(`As chaves privadas são ${p}, ${q} e ${d}. Guarde essas chaves com cuidado e não as perca`)
 //}
-console.log(`texto decriptado: ${m}`)
+console.log(`texto decriptado: ${m.join('')}`)
+
 
